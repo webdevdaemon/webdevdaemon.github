@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|alegreya-sans:300,500,700|open-sans: 100, 400, 700');
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+$family-sans-serif: 'Lato',
+Avenir,
+sans-serif;
+$family-serif: 'montserrat',
+Avenir,
+serif;
+$family-code: 'fira code',
+'menlo',
+monospace;
+$family-secondary: 'alegreya sans',
+serif;
+$family-primary: 'open sans',
+sans-serif;
+$family-monospace: 'menlo',
+monospace;
+
+// Update text sizes
+$size-1: 5em;
+
+// import bulma
+@import "node_modules/bulma/bulma.sass";
+
+// Massage
+
+header#navbar-home {
+  background: rgba(255, 255, 255, .5);
+}
+
+.navbar-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+// Helpers
+
+.bg {
+  &-tinted {
+    background-color: rgba(0, 0, 0, .33);
+  }
+
+  &-frosted {
+    background-color: rgba(255, 255, 255, .15);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+
+  &-blurred {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.has-radius {
+  border-radius: 1.33rem;
+}
+
+$pad: 1.25rem;
+
+.has-pad {
+  &-t {
+    padding-top: $pad;
+  }
+
+  &-l {
+    padding-left: $pad;
+  }
+
+  &-r {
+    padding-right: $pad;
+  }
+
+  &-b {
+    padding-bottom: $pad;
+  }
+}
+
+// Corrections
+.navbar.standard {
+  background: hsla(242, 100%, 90%, 1.0);
+}
+
+
+navbar-brand {
+  .navbar-item {
+    &:hover {
+      span {
+        letter-spacing: 50%;
+      }
+    }
+  }
+}
+
+.navbar-menu {
+
+  .navbar-item {
+    line-height: 1.2;
+    transition: all .3s ease-out;
+
+    &:hover {
+      a {
+        color: #000;
+      }
+      background: rgba(255, 255, 255, .8);
+      letter-spacing: 90%;
+    }
+  }
+}
+
+
+.navbar-start {
+  .navbar-menu {
+    .navbar-item {
+      a {
+        line-height: normal;
+      }
+    }
+  }
+}
+
+.is-active {
+  border-bottom: solid 4px yellow;
+  background: hsl(242, 100%, 75%);
+
+  a {
+    color: white;
+  }
+
+  &:hover {
+    border-bottom: hsl(242, 100%, 75%);
+    background: solid 4px yellow;
+
+    a {
+      color: black;
+    }
+  }
+}
