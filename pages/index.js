@@ -1,67 +1,36 @@
+import React, { Component } from 'react'
 import Page from '../components/page'
 import Navbar from '../components/navbar'
-import NavMenu from '../components/nav-menu'
+import { Hero } from 'bloomer/lib/layout/Hero/Hero'
+import { HeroHeader } from 'bloomer/lib/layout/Hero/HeroHeader'
+import { HeroBody } from 'bloomer/lib/layout/Hero/HeroBody'
+import { fullPage, noScroll } from '../styles.js'
+import svg from '../static/_logo.svg'
 
-import Link from 'next/link'
+const HomeTitle = ({ title, subTitle }) => (
+  <>
+    <h1 className="title is-res-size-1 has-text-centered">{title}</h1>
+    <h2 className="subtitle is-res-size-4 has-text-centered">{subTitle}</h2>
+  </>
+)
 
-const HomeHead = ({children}) => <div className="hero-head">{children}</div>
+const HomeLogo = ({ logo }) => <img alt="Dev Portfolio: Charles Morgan" className={'home-logo'} src={logo} />
 
-const HomeBody = ({children, title, subtitle}) => {
-  return (
-    <div className="hero-body">
-      <div className="container has-text-centered">
-        <h1 className="title is-size-1">{title}</h1>
-        <h2 className="subtitle">{subtitle()}</h2>
-      </div>
-    </div>
-  )
-}
-
-const HomeFoot = ({children, render}) => {
-  return (
-    <div className="hero-foot">
-      
-    </div>
-  )
-}
-
-
-/*
-  <<<|> Export Page <|>>>
-*/
-
-
-export default () => {
-  return (
-    <Page className='' style={{
-      overflow: 'hidden',
-      height: '100vh',
-      width: '100vw',
-      margin: 0,
-      padding: 0,
-    }}>
-      <section className="hero is-success is-fullheight" id="hero-bg" style={{
-        backgroundColor: '#000099',
-        backgroundImage: 'url("../static/markus-spiske-771011-unsplash.jpg")',
-        backgroundSize: 'cover',
-        backgroundBlendMode: 'multiply',
-      }}>
-        <HomeHead>
-          <Navbar idSuffix='home'/>
-        </HomeHead>
-
-        <HomeBody
-          title={'Charles Morgan'}
-          subtitle={() => (
-            <div>
-              <span className={'is-size-3'}>
-                Javascript Enthusiast & <br/>Web Developer Extraordinaire
-              </span>
-            </div>
-          )}
-        />
-        <HomeFoot/>
-      </section>
-    </Page>
-  )
-}
+// Actual Page
+export default () => (
+  <Page
+    className="home"
+    render={() => (
+      <Hero id="hero-home" isFullHeight tag="section">
+        <HeroHeader>
+          <Navbar className="header" />
+        </HeroHeader>
+        <HeroBody className="home-body" tag="main">
+          <HomeLogo logo={svg} />
+          <HomeTitle subTitle="Designer, Team-Builder, Client-Care Specialist, Sound Engineer" title="Charles Morgan" />
+        </HeroBody>
+      </Hero>
+    )}
+    style={{ ...fullPage, ...noScroll }}
+  />
+)

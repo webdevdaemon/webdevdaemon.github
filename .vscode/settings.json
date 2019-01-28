@@ -1,0 +1,29 @@
+{
+  "eslint.enable": true,
+  "files.exclude": {
+    "__**": true,
+    "node_modules": true,
+    ".next": true,
+    ".git": true,
+    ".vscode": true,
+    ".bitmap": true,
+    "**/.DS_Store": true,
+    "bit.json": true,
+    "static/.DS_Store": true
+  },
+  "workbench.fontAliasing": "auto",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "off",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.showIcons": false,
+  "workbench.editor.swipeToNavigate": true,
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.editor.tabSizing": "shrink",
+  "explorer.openEditors.visible": 6,
+  "explorer.sortOrder": "modified",
+  "search.location": "panel",
+  "search.showLineNumbers": true,
+  "search.useGlobalIgnoreFiles": true
+}

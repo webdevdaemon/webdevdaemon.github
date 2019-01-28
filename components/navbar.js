@@ -1,105 +1,61 @@
 import React from 'react'
+import { CTXBurgerMenu } from './providers'
 import NavMenu from './nav-menu'
 
-const NavbarBurger = ({hamClick, hamOn}) => {
-  return (
-    <span
-      className={`navbar-burger burger ${hamOn && 'is-active'}`}
-      data-target="navbarMenuHeroC"
-      onClick={hamClick}
-    >
-      <span />
-      <span />
-      <span />
-    </span>
-  )
-}
+import { Button, Control, Field, Icon } from 'bloomer'
 
-const NavbarBrand = ({brandText}) => {
-  return (
-    <div className="navbar-brand has-pad-r">
-      <a className="navbar-item">
-        <span className="is-size-1">{`${brandText}`}</span>
-      </a>
-      <NavbarBurger onClick={onCLick}/>
-    </div>
-  )
-}
+import { Navbar as Nav } from 'bloomer/lib/components/Navbar/Navbar'
+import { NavbarBrand } from 'bloomer/lib/components/Navbar/NavbarBrand'
+import { NavbarEnd } from 'bloomer/lib/components/Navbar/NavbarEnd'
+import { NavbarItem } from 'bloomer/lib/components/Navbar/NavbarItem'
+import { NavbarMenu } from 'bloomer/lib/components/Navbar/NavbarMenu'
+import { NavbarStart } from 'bloomer/lib/components/Navbar/NavbarStart'
+import { NavbarBurger } from 'bloomer/lib/components/Navbar/NavbarBurger'
 
-const NavbarMenu = () => {
-  return (
-    <div id="navbarMenuHeroC" className="navbar-menu">
-      <div className="navbar-start">
-        <NavMenu />
-      </div>
-      <div className="navbar-end has-pad-r">
-        <span className="navbar-item">
-          <a
-            className="navbar-icon github icon has-text-white"
-            href="http://github.com/webdevdaemon"
-          >
-            <i className="fab fa-github is-size-3" />
-          </a>
-        </span>
-        <span className="navbar-item">
-          <a
-            className="navbar-icon github icon has-text-white"
-            href="http://github.com/webdevdaemon"
-          >
-            <i className="fas fa-envelope is-size-3" />
-          </a>
-        </span>
-      </div>
-    </div>
-  )
-}
+const Navbar = props => (
+  <CTXBurgerMenu.Consumer>
+    {({ burgerActive, burgerToggle }) => (
+      <Nav {...props}>
+        <NavbarBrand>
+          <NavbarItem className="brand">
+            <img className="brand-logo" src="./static/brand.png" />
+          </NavbarItem>
+          <NavbarBurger isActive={burgerActive} onClick={((e) => burgerToggle())} />
+        </NavbarBrand>
 
-// const NavbarDropdown = () => {
-//   return (
-//     <div class="navbar-item has-dropdown">
-//       <a class="navbar-link">Docs</a>
+        <NavbarMenu isActive={burgerActive} onClick={((e) => burgerToggle())}>
+          <NavbarStart>
+            <NavMenu />
+          </NavbarStart>
 
-//       <div class="navbar-dropdown">
-//         <a class="navbar-item">Overview</a>
-//         <a class="navbar-item">Elements</a>
-//         <a class="navbar-item">Components</a>
-//         <hr class="navbar-divider" />
+          <NavbarEnd className="navbar-buttons">
+            <NavbarItem href="https://github.com/webdevdaemon">
+              <Icon className="fab fa-github is-size-5 has-text-white ico" />
+            </NavbarItem>
 
-//         <div class="navbar-item">Version 0.7.2</div>
-//       </div>
-//     </div>
-//   )
-// }
+            <NavbarItem href="mailto:cmorganwebdev@gmail.com">
+              <Icon className="fas fa-envelope is-size-5 has-text-white ico" />
+            </NavbarItem>
 
-class Navbar extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      hamOn: false,
-    }
-  }
-
-  render() {
-    const {className, classNameBrand, classNameMenu, idSuffix, ...props} = this.props
-    const {hamOn} = this.state
-    
-    hamClick = () => this.setState(({hamOn}) => ({hamOn: !hamOn}))
-
-    return (
-      <header className={`navbar ${className}`} id={`navbar-${idSuffix}`}>
-        <NavbarBrand
-          className={`${classNameBrand}`}
-          hamClick={this.hamClick}
-          brandText="cmDev"
-          hamOn
-        />
-        <NavbarMenu
-          classname={`${classNameMenu}`}
-          hamOn
-        />
-      </header>
-    )
-  }
-}
+            <NavbarItem>
+              <Field isGrouped>
+                <Control>
+                  <Button
+                    className="has-pad-lx2 has-pad-rx2 is-success"
+                    href="/contact"
+                    target="_blank"
+                  >
+                    <Icon className="fas fa-handshake has-text-white" />
+                    <span>Hire CM</span>
+                  </Button>
+                </Control>
+              </Field>
+            </NavbarItem>
+          </NavbarEnd>
+        </NavbarMenu>
+      </Nav>
+    )}
+  </CTXBurgerMenu.Consumer>
+)
 
 export default Navbar

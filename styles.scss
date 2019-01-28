@@ -1,161 +1,239 @@
 @charset "utf-8";
 
-// Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|alegreya-sans:300,500,700|open-sans: 100, 400, 700');
-
-// Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
-
-// Update Bulma's global variables
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
-
-// Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
-$control-border-width: 2px;
-$input-border-color: transparent;
-$input-shadow: none;
-$family-sans-serif: 'Lato',
-Avenir,
-sans-serif;
-$family-serif: 'montserrat',
-Avenir,
-serif;
-$family-code: 'fira code',
-'menlo',
-monospace;
-$family-secondary: 'alegreya sans',
-serif;
-$family-primary: 'open sans',
-sans-serif;
-$family-monospace: 'menlo',
-monospace;
-
-// Update text sizes
-$size-1: 5em;
+@import "./scss/partials/base";
+@import "./scss/partials/helpers";
+@import "./scss/partials/utilities";
+@import "./scss/partials/variables";
+// @import "./scss/partials/layout/"
+// @import "./scss/partials/components/"
 
 // import bulma
 @import "node_modules/bulma/bulma.sass";
 
-// Massage
+// PAGE TRANSITION CLASSES
 
-header#navbar-home {
-  background: rgba(255, 255, 255, .5);
+.page-transition-enter {
+  transform: rotateX(-90deg);
+}
+.page-transition-enter-active {
+  transform: rotateX(0deg);
+  transition: transform 500ms linear;
+}
+.page-transition-exit {
+  transform: rotateX(0deg);
+}
+.page-transition-exit-active {
+  transform: rotateX(90deg);
+  transition: transform 500ms linear;
 }
 
-.navbar-icon {
-  width: 3rem;
-  height: 3rem;
-}
+// Dirty ID usage (bad Charles! BAD!!!)
 
-// Helpers
-
-.bg {
-  &-tinted {
-    background-color: rgba(0, 0, 0, .33);
-  }
-
-  &-frosted {
-    background-color: rgba(255, 255, 255, .15);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-  }
-
-  &-blurred {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-  }
-}
-
-.has-radius {
-  border-radius: 1.33rem;
-}
-
-$pad: 1.25rem;
-
-.has-pad {
-  &-t {
-    padding-top: $pad;
-  }
-
-  &-l {
-    padding-left: $pad;
-  }
-
-  &-r {
-    padding-right: $pad;
-  }
-
-  &-b {
-    padding-bottom: $pad;
+#hero-home {
+  background-image: url("./static/markus-spiske.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  animation: 20s linear;
+  animation-iteration-count: infinite;
+  @include animation-keyframes {
+    0% {
+      background-color: hsla(0, 100%, 20%, 1);
+    }
+    10% {
+      background-color: hsla(36, 100%, 20%, 1);
+    }
+    20% {
+      background-color: hsla(72, 100%, 20%, 1);
+    }
+    30% {
+      background-color: hsla(108, 100%, 20%, 1);
+    }
+    40% {
+      background-color: hsla(144, 100%, 20%, 1);
+    }
+    50% {
+      background-color: hsla(180, 100%, 20%, 1);
+    }
+    60% {
+      background-color: hsla(216, 100%, 20%, 1);
+    }
+    70% {
+      background-color: hsla(252, 100%, 20%, 1);
+    }
+    80% {
+      background-color: hsla(288, 100%, 20%, 1);
+    }
+    90% {
+      background-color: hsla(324, 100%, 20%, 1);
+    }
+    100% {
+      background-color: hsla(360, 100%, 20%, 1);
+    }
+    // 0%  { background-color: hsla(0, 100%, 20%, 1); }
   }
 }
 
 // Corrections
-.navbar.standard {
-  background: hsla(242, 100%, 90%, 1.0);
-}
+/* ------------------------------- Burger Menu ------------------------------ */
 
+.navbar-burger {
+  position: relative;
+  height: auto;
+  transition: height 0.66s ease-in-out;
+  transition-delay: 0.33s;
+  width: 5.6rem;
 
-navbar-brand {
-  .navbar-item {
-    &:hover {
-      span {
-        letter-spacing: 50%;
-      }
+  span {
+    background-color: white;
+    height: 6px;
+    left: auto;
+    right: 1.4rem;
+    width: 2.9rem;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+
+    &:nth-child(1) {
+      top: calc(50% - 13px);
+    }
+    &:nth-child(2) {
+      top: calc(50% - 2px);
+    }
+    &:nth-child(3) {
+      top: calc(50% + 9px);
+    }
+  }
+
+  &.is-active,
+  &:hover,
+  &:focus {
+    background: $white;
+    span {
+      background-color: $white;
+      border: solid 1px #000;
+    }
+  }
+
+  &.is-active {
+    span:nth-child(1) {
+      transform: translateY(11px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      transform: translateX(200px);
+    }
+    span:nth-child(3) {
+      transform: translateY(-11px) rotate(-45deg);
     }
   }
 }
 
-.navbar-menu {
-
-  .navbar-item {
-    line-height: 1.2;
-    transition: all .3s ease-out;
-
-    &:hover {
-      a {
-        color: #000;
-      }
-      background: rgba(255, 255, 255, .8);
-      letter-spacing: 90%;
+.navbar.header {
+  background-color: $offBlack;
+  
+  .brand {
+    color: $white;
+    .brand-logo {
+      display: block;
+      max-height: 4rem;
+      max-width: 120%;
+      height: auto;
+      width: auto;
     }
   }
-}
 
-
-.navbar-start {
   .navbar-menu {
+    font-family: $family-sans-serif;
+    color: $white;
+
     .navbar-item {
-      a {
-        line-height: normal;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1.2;
+      transition: all 0.3s ease-out;
+      color: $white;
+      &:hover,
+      &.is-active {
+        background-color: $white;
+        color: black !important;
+      }
+    }
+    
+
+    .navbar-buttons {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 2rem;
+
+      .navbar-item {
+        margin: 0 0 0 1rem;
+        transition: all 0.5s ease-out;
+
+        &:hover,
+        &:focus,
+        &.active {
+          background: transparent;
+          transform: scale(1.25);
+        }
+      }
+    }
+
+    &.is-active {
+      background-color: transparentize($offBlack, 0.25);
+      position: absolute;
+      width: 100vw;
+      height: auto !important;
+      .navbar-item {
+        font-size: 2em;
+        font-weight: 500;
+        color: $white;
+        &:hover,
+        &.is-active {
+          color: black;
+        }
       }
     }
   }
 }
 
-.is-active {
-  border-bottom: solid 4px yellow;
-  background: hsl(242, 100%, 75%);
-
-  a {
-    color: white;
+.home-body {
+  flex-direction: column;
+  justify-content: center;
+  .home-logo {
+    margin: -5rem auto 0 auto;
+    width: 80vmin;
+    transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 1.25);
+    transition-property: transform;
+    &.off-screen {
+      transform: rotateX(-90deg);
+    }
   }
-
-  &:hover {
-    border-bottom: hsl(242, 100%, 75%);
-    background: solid 4px yellow;
-
-    a {
-      color: black;
+  .title {
+    background-color: $white;
+    border-radius: 5rem;
+    font-family: $family-sans-serif;
+    font-size: 7vmin;
+    font-weight: 400;
+    padding: 0.15rem 2rem;
+    background-blend-mode: multiply;
+    margin: 0 auto 2rem auto;
+    transition: transform 0.75s ease-out, color 2s linear;
+    transition-delay: 1s;
+    text-overflow: nowrap;
+    text-transform: uppercase;
+    &.off-screen {
+      @include offScreen(left);
+    }
+  }
+  .subtitle {
+    color: $white;
+    font-family: $family-secondary;
+    font-size: 3.7vmin;
+    margin-top: 4rem;
+    transition: 0.75s cubic-bezier(0.175, 0.885, 0.75, 1.2);
+    transition-property: transform;
+    transition-delay: 1.25s;
+    &.off-screen {
+      @include offScreen(right);
     }
   }
 }

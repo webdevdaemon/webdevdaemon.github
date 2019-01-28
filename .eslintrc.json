@@ -1,44 +1,43 @@
 {
   "parser": "babel-eslint",
-  "env": {"browser": true, "es6": true},
-  "parserOptions": {
-    "ecmaversion": 9,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "restParams": true,
-      "defaultParams": true,
-      "spread": true,
-      "objectLiteralComputedProperties": true,
-      "destructuring": true,
-      "jsx": true
-    },
-    "sourceType": "module"
-  },
-  "plugins": ["env", "react"],
+  "env": { "browser": true, "es6": true },
+  "parserOptions": { "ecmaversion": 9, "sourceType": "module" },
+  "plugins": ["env", "react", "prettier", "react-hooks"],
   "rules": {
-    "brace-style": [0, "1tbs", {"allowSingleLine": true}],
+    "brace-style": [0, "1tbs", { "allowSingleLine": true }],
     "linebreak-style": 0,
     "no-console": 0,
     "no-undef": 0,
-    "quotes": ["error", "single"],
     "indent": [
       0,
       2,
       {
-        "ImportDeclaration": 4,
-        "flatTernaryExpressions": false,
-        "ObjectExpression": 2,
         "ArrayExpression": 2,
+        "CallExpression": { "arguments": "first" },
+        "flatTernaryExpressions": false,
+        "ImportDeclaration": 4,
+        "ObjectExpression": 2,
         "SwitchCase": 1,
-        "CallExpression": {"arguments": "first"},
-        "VariableDeclarator": {"var": 2, "let": 2, "const": 3}
+        "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }
       }
     ],
+    "quotes": [2, "single"],
+    "semi": [2, "never"],
     "react/jsx-closing-bracket-location": 0,
-    "react/jsx-indent-props": [0, 2],
-    "react/jsx-indent": [0, 2],
+    "react/jsx-no-duplicate-props": [2, { "ignoreCase": false }],
     "react/jsx-no-undef": 0,
     "react/jsx-no-unused-vars": 0,
-    "semi": [2, "never"]
+    "react/jsx-sort-props": 2,
+    "react/jsx-tag-spacing": [
+      2,
+      {
+        "afterOpening": "never",
+        "beforeClosing": "never",
+        "beforeSelfClosing": "always",
+        "closingSlash": "never"
+      }
+    ],
+    "react/no-unused-state": 2,
+    "react/self-closing-comp": [2, { "component": true, "html": true }]
   }
 }

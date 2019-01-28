@@ -11,7 +11,7 @@ const Footer = props => {
 }
 
 Footer.propTypes = {
-  children: PropTypes.node,
+    children: PropTypes.node,
 }
 
 export default Footer
