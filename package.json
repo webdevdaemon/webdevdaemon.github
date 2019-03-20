@@ -19,6 +19,11 @@
   },
   "homepage": "https://github.com/webdevdaemon/cmdev-nextjs#readme",
   "dependencies": {
+    "@types/eslint-plugin-prettier": "^2.2.0",
+    "@types/next": "^8.0.1",
+    "@types/node-sass": "^4.11.0",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
     "@zeit/next-sass": "^1.0.1",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
@@ -27,11 +32,12 @@
     "next-images": "^1.0.4",
     "next-page-transitions": "^1.0.0-alpha.5",
     "node-sass": "^4.10.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "sass-loader": "^7.1.0"
   },
   "devDependencies": {
+    "@types/eslint": "^4.16.6",
     "babel-eslint": "^10.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-spread": "^6.22.0",

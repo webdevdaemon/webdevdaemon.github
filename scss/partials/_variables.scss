@@ -19,13 +19,14 @@ $body-background-color: $lighter-grey;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$family-title: "croissant one", cursive;
 $family-hairline: "Lato-Hairline", sans-serif;
 $family-sans-serif: "Lato", avenir, sans-serif;
 $family-serif: "montserrat", avenir, serif;
 $family-code: "inconsolata", monospace;
 $family-secondary: "ibm plex sans", serif;
 $family-primary: "open sans", sans-serif;
-$family-monospace: "menlo", monospace;
+$family-monospace: "hasklig", "inconsolata", monospace;
 // Update text sizes
 $size-1: 7.2rem;
 $size-2: 6rem;

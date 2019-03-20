@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
 
 import Head from '../components/head'
+import fallbacks from '../components/fallbacks'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -17,7 +18,7 @@ export default class MyApp extends App {
     return (
       <Container>
         <Head />
-        <PageTransition classNames="page-transition" id="wrapper" timeout={ 500 }>
+        <PageTransition classNames="page-transition" id="wrapper" timeout={200}>
           <Component { ...pageProps } />
         </PageTransition>
       </Container>

@@ -23,4 +23,40 @@ const social = [
   }
 ]
 
+class Example {
+  constructor({ name, href, img, info }) {
+    this.name = name
+    this.href = href
+    this.img  = img
+    this.info = info
+  }
+}
+
+class OpenSource extends Example {
+  constructor ({repo, pullRequest, file}) {
+    this.repo = repo
+    this.file = file
+    this.pullRequest = pullRequest
+  }
+}
+
+class Pen extends Example {
+  constructor() {
+    
+  }
+}
+
+
+
+const examples = [
+  {name: 'Barbacker', href: 'https://barbacker.herokuapp.com',  img: '', info: ''},
+  {name: 'PomoJS',    href: 'https://pomo-js.herokuapp.com',    img: '', info: ''},
+]
+
+const openSource = [
+  {name:'', href: '', img: '', info: ''}
+]
+
+const projects = {}
+
 export {routes, social}

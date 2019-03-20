@@ -9,7 +9,11 @@
     ".bitmap": true,
     "**/.DS_Store": true,
     "bit.json": true,
-    "static/.DS_Store": true
+    "static/.DS_Store": true,
+    "styles.min.css": true,
+    "styles.min.css.map": true,
+    "styles.css": true,
+    "styles.css.map": true
   },
   "workbench.fontAliasing": "auto",
   "workbench.iconTheme": "Monokai Pro Icons",

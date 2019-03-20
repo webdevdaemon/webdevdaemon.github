@@ -13,7 +13,7 @@ export default ({title = 'Dev Portfolio: Charles Morgan', children}) => (
     />
     <link
       crossOrigin="anonymous"
-      href="https://fonts.googleapis.com/css?family=Lato:100,200,400,700|Montserrat:400,700|Ibm-Plex-Sans:100,400,700|Open-Sans:100,400,700"
+      href="https://fonts.googleapis.com/css?family=Lato:100,200,400,700|Montserrat:400,700|Open-Sans:100,400,700|Croissant-One"
       rel="stylesheet"
     />
     {children}

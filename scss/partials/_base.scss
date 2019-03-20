@@ -2,3 +2,9 @@ html {
   font-size: 10px;
   @extend %bgGradientLight;
 }
+
+body {
+  min-height: 100vh;
+  min-width:  100vw;
+  max-width:  100vw;
+}

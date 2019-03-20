@@ -1,30 +1,63 @@
 import Page from '../components/page'
 import Navbar from '../components/navbar'
+import {Hero} from 'bloomer/lib/layout/Hero/Hero'
 import {HeroBody} from 'bloomer/lib/layout/Hero/HeroBody'
 import {HeroHeader} from 'bloomer/lib/layout/Hero/HeroHeader'
-import {Hero} from 'bloomer/lib/layout/Hero/Hero'
+import {HeroFooter} from 'bloomer/lib/layout/Hero/HeroFooter'
+
+import { useState, useRef } from 'react'
+import TabContent from '../components/tab-content'
 
 const Projects = () => {
+
+  const [activeIndex, setActiveIndex] = useState(0)
+  const tabHandler = i => setActiveIndex(i)
+  const [heroHeight, setHeroHeight] = useState()
+
+  const tabs = ['Apps', 'Widgets', 'Open Source', 'WP', 'Misc']
+  
+  const renderTab = ({ id, i }) =>
+    <li className={`project-tab ${i === activeIndex ? 'is-active' : ''}`} key={id}>
+      <a onClick={() => tabHandler(i)}>{id}</a>
+    </li>
+  
   return (
-    <Page
-      className="Projects"
+    <Page className="Projects"
+      render={() => (
+        <>
+          <Hero
+            id="project-hero"
+            isBold
+            isColor="black"
+            isSize="small" 
+          tag="section">
+            <HeroHeader>
+              <Navbar className="header" />
+            </HeroHeader>
+            <HeroBody>
+              <h1 className="is-family-title is-size-4">{'Projects'}</h1>
+            </HeroBody>
+            <HeroFooter>
+              <nav className="tabs is-centered is-boxed is-small">
+                <div className="container">
+                  <ul>
+                    {tabs.map((id,i) => renderTab({id,i}))}
+                  </ul>
+                </div>
+              </nav>
+            </HeroFooter>
+          </Hero>
+          <TabContent />
+        </>
+      )}
       style={{
-          overflow: 'scroll',
-          height: '100vh',
-          width: '100vw',
-          margin: 0,
-          padding: 0,
+        overflow: 'scroll',
+        height: '100vh',
+        width: '100vw',
+        margin: 0,
+        padding: 0,
       }}
-    >
-      <Hero isBold isColor="dark" isSize="medium">
-        <HeroHeader>
-          <Navbar className="header" />
-        </HeroHeader>
-        <HeroBody>
-          <h1 className="title">{'Projects by CM'}</h1>
-        </HeroBody>
-      </Hero>
-    </Page>
+    />
   )
 }
 export default Projects

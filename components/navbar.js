@@ -17,7 +17,7 @@ const Navbar = props => (
     {({ burgerActive, burgerToggle }) => (
       <Nav {...props}>
         <NavbarBrand>
-          <NavbarItem className="brand">
+          <NavbarItem className="brand" href="/" tag="a">
             <img className="brand-logo" src="./static/brand.png" />
           </NavbarItem>
           <NavbarBurger isActive={burgerActive} onClick={((e) => burgerToggle())} />
@@ -30,11 +30,11 @@ const Navbar = props => (
 
           <NavbarEnd className="navbar-buttons">
             <NavbarItem href="https://github.com/webdevdaemon">
-              <Icon className="fab fa-github is-size-5 has-text-white ico" />
+              <Icon className="fab fa-github is-size-6 has-text-white ico" />
             </NavbarItem>
 
             <NavbarItem href="mailto:cmorganwebdev@gmail.com">
-              <Icon className="fas fa-envelope is-size-5 has-text-white ico" />
+              <Icon className="fas fa-envelope is-size-6 has-text-white ico" />
             </NavbarItem>
 
             <NavbarItem>
