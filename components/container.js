@@ -1,14 +1,16 @@
 /**
-* @augments {Component<{  children:node,  isFullwidth:boolean,  bgColor:oneOf([...THEME_COLORS]),>}
-*/
+ * @augments {Component<{  children:node,  isFullwidth:boolean,  bgColor:oneOf([...THEME_COLORS]),>}
+ */
 import PropTypes from 'prop-types'
-import { Container } from 'bloomer/lib/layout/Container'
-import { THEME_COLORS } from '../pt'
+import {Container} from 'bloomer/lib/layout/Container'
+import {THEME_COLORS} from '../pt'
 
-const Contain = ({ children, isFullwidth, bgColor }) => {
+const Contain = ({children, isFullwidth, bgColor}) => {
   return (
     <Container
-      className={`${isFullwidth ? '' : 'is-fullhd'} has-background-${bgColor}`} isFluid={!isFullwidth}>
+      className={`${isFullwidth ? '' : 'is-fullhd'} has-background-${bgColor}`}
+      isFluid={!isFullwidth}
+    >
       {children}
     </Container>
   )

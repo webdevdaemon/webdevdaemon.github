@@ -3,7 +3,7 @@ import { CTXBurgerMenu } from './providers'
 import NavMenu from './nav-menu'
 
 import { Button, Control, Field, Icon } from 'bloomer'
-
+import { social } from '../links'
 import { Navbar as Nav } from 'bloomer/lib/components/Navbar/Navbar'
 import { NavbarBrand } from 'bloomer/lib/components/Navbar/NavbarBrand'
 import { NavbarEnd } from 'bloomer/lib/components/Navbar/NavbarEnd'
@@ -29,13 +29,14 @@ const Navbar = props => (
           </NavbarStart>
 
           <NavbarEnd className="navbar-buttons">
-            <NavbarItem href="https://github.com/webdevdaemon">
-              <Icon className="fab fa-github is-size-6 has-text-white ico" />
-            </NavbarItem>
-
-            <NavbarItem href="mailto:cmorganwebdev@gmail.com">
-              <Icon className="fas fa-envelope is-size-6 has-text-white ico" />
-            </NavbarItem>
+            
+            {
+              social.map(({ href, iconClassName, linkName, linkAlt }) => {
+                return (<NavbarItem alt={linkAlt} className={linkName} href={href} key={href}>
+                  <Icon className={`${iconClassName} is-size-6 has-text-white ico`} />
+                </NavbarItem>)
+              })
+            }
 
             <NavbarItem>
               <Field isGrouped>

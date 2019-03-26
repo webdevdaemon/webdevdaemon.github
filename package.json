@@ -24,6 +24,7 @@
     "@types/node-sass": "^4.11.0",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
+    "@types/react-router-dom": "^4.3.1",
     "@zeit/next-sass": "^1.0.1",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
@@ -34,6 +35,7 @@
     "node-sass": "^4.10.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0",
     "sass-loader": "^7.1.0"
   },
   "devDependencies": {

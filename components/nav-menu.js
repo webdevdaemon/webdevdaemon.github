@@ -8,7 +8,7 @@ const NavMenu = ({ router, ...props }) => {
   return (
     <>
       {routes.map(({ name, navRoute }, index) => (
-        <Link key={`${name}${index}`} href={navRoute} passHref prefetch>
+        <Link href={navRoute} key={`${name}${index}`} passHref prefetch>
           <NavbarItem isActive={router.route === navRoute}>{name}</NavbarItem>
         </Link>
       ))}

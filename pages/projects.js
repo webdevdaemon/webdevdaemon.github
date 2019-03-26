@@ -2,25 +2,27 @@ import Page from '../components/page'
 import Navbar from '../components/navbar'
 import {Hero} from 'bloomer/lib/layout/Hero/Hero'
 import {HeroBody} from 'bloomer/lib/layout/Hero/HeroBody'
-import {HeroHeader} from 'bloomer/lib/layout/Hero/HeroHeader'
-import {HeroFooter} from 'bloomer/lib/layout/Hero/HeroFooter'
-
-import { useState, useRef } from 'react'
+import { HeroHeader } from 'bloomer/lib/layout/Hero/HeroHeader'
+import { HeroFooter } from 'bloomer/lib/layout/Hero/HeroFooter'
+import { useState } from 'react'
 import TabContent from '../components/tab-content'
+import ProjectTabs from '../components/project-tabs'
 
 const Projects = () => {
 
   const [activeIndex, setActiveIndex] = useState(0)
   const tabHandler = i => setActiveIndex(i)
-  const [heroHeight, setHeroHeight] = useState()
 
-  const tabs = ['Apps', 'Widgets', 'Open Source', 'WP', 'Misc']
+  const tabs = ['Apps', 'Widgets', 'Github', 'WP', 'Misc']
   
   const renderTab = ({ id, i }) =>
     <li className={`project-tab ${i === activeIndex ? 'is-active' : ''}`} key={id}>
       <a onClick={() => tabHandler(i)}>{id}</a>
     </li>
+
   
+  const showContent = ProjectTabs[tabs[activeIndex]]
+
   return (
     <Page className="Projects"
       render={() => (
@@ -30,7 +32,7 @@ const Projects = () => {
             isBold
             isColor="black"
             isSize="small" 
-          tag="section">
+            tag="section">
             <HeroHeader>
               <Navbar className="header" />
             </HeroHeader>
@@ -38,7 +40,7 @@ const Projects = () => {
               <h1 className="is-family-title is-size-4">{'Projects'}</h1>
             </HeroBody>
             <HeroFooter>
-              <nav className="tabs is-centered is-boxed is-small">
+              <nav className="tabs is-centered is-full-width is-small">
                 <div className="container">
                   <ul>
                     {tabs.map((id,i) => renderTab({id,i}))}
@@ -47,7 +49,9 @@ const Projects = () => {
               </nav>
             </HeroFooter>
           </Hero>
-          <TabContent />
+          <TabContent>
+            {showContent()}
+          </TabContent>
         </>
       )}
       style={{

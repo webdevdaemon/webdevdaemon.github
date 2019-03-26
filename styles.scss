@@ -11,226 +11,280 @@
 // PAGE TRANSITION CLASSES
 // next/PageTransition
 .page-transition {
-    &-enter {
-        transform: scale(0);
-        opacity: 0.5;
-    }
-    &-enter-active {
-        transform: scale(1);
-        opacity: 1;
-        z-index: 10;
-        transition: transform 333ms linear;
-    }
-    // &-enter-done {
-    //     // min-height: 100vh;
-    // }
-    &-exit {
-        opacity: 1;
-    }
-    &-exit-active {
-        z-index: 0;
-        opacity: 0;
-        transition: transform 100ms linear;
-    }
+  &-enter {
+    transform: scale(0);
+    opacity: .5;
+  }
+
+  &-enter-active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 10;
+    transition: transform 333ms linear;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    z-index: 0;
+    opacity: 0;
+    transition: transform 100ms linear;
+  }
 }
 
 // Dirty ID usage (bad Charles! BAD!!!)
 #hero-home {
-    background-image: url("./static/markus-spiske.jpg");
-    background-size: cover;
-    background-blend-mode: multiply;
-    animation: 20s linear;
-    animation-iteration-count: infinite;
-    @include animation-keyframes {
-        0% {
-            background-color: hsla(0, 100%, 20%, 1);
-        }
-        10% {
-            background-color: hsla(36, 100%, 20%, 1);
-        }
-        20% {
-            background-color: hsla(72, 100%, 20%, 1);
-        }
-        30% {
-            background-color: hsla(108, 100%, 20%, 1);
-        }
-        40% {
-            background-color: hsla(144, 100%, 20%, 1);
-        }
-        50% {
-            background-color: hsla(180, 100%, 20%, 1);
-        }
-        60% {
-            background-color: hsla(216, 100%, 20%, 1);
-        }
-        70% {
-            background-color: hsla(252, 100%, 20%, 1);
-        }
-        80% {
-            background-color: hsla(288, 100%, 20%, 1);
-        }
-        90% {
-            background-color: hsla(324, 100%, 20%, 1);
-        }
-        100% {
-            background-color: hsla(360, 100%, 20%, 1);
-        }
-        // 0%  { background-color: hsla(0, 100%, 20%, 1); }
+  background-image: url("./static/markus-spiske.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  animation: 12s linear;
+  animation-iteration-count: infinite;
+  @include animation-keyframes {
+    0% {
+      background-color: hsla(0, 100%, 20%, 1);
     }
+
+    10% {
+      background-color: hsla(36, 100%, 20%, 1);
+    }
+
+    20% {
+      background-color: hsla(72, 100%, 20%, 1);
+    }
+
+    30% {
+      background-color: hsla(108, 100%, 20%, 1);
+    }
+
+    40% {
+      background-color: hsla(144, 100%, 20%, 1);
+    }
+
+    50% {
+      background-color: hsla(180, 100%, 20%, 1);
+    }
+
+    60% {
+      background-color: hsla(216, 100%, 20%, 1);
+    }
+
+    70% {
+      background-color: hsla(252, 100%, 20%, 1);
+    }
+
+    80% {
+      background-color: hsla(288, 100%, 20%, 1);
+    }
+
+    90% {
+      background-color: hsla(324, 100%, 20%, 1);
+    }
+
+    100% {
+      background-color: hsla(360, 100%, 20%, 1);
+    }
+  }
 }
 
 // Corrections
 
 /* ------------------------------- Burger Menu ------------------------------ */
+.omni-toggle {
+  background-color: $white;
+  color: yellow;
+  background-size: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  opacity: 1;
+  outline: none;
+  width: 64px;
+  transition: all .5s ease-out;
+  z-index: 110;
+
+  &.closed {
+    background-color: transparent;
+    background-image: url('./static/skull-brackets.png');
+    opacity: 0.5;
+  }
+  &:hover {
+    color: $offBlack;
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.omni-info-text {
+  background: $grey-dark;
+  color: $white;
+  strong {
+    color: $white;
+  }
+}
 
 .navbar-burger {
-    position: relative;
-    height: auto;
-    transition: height .66s ease-in-out;
-    transition-delay: .33s;
-    width: 5.6rem;
+  position: relative;
+  height: auto;
+  transition: height .66s ease-in-out;
+  transition-delay: .33s;
+  width: 5.6rem;
+
+  span {
+    background-color: white;
+    height: 6px;
+    left: auto;
+    right: 1.4rem;
+    width: 2.9rem;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+
+    &:nth-child(1) {
+      top: calc(50% - 13px);
+    }
+
+    &:nth-child(2) {
+      top: calc(50% - 2px);
+    }
+
+    &:nth-child(3) {
+      top: calc(50% + 9px);
+    }
+  }
+
+  &.is-active,
+  &:focus,
+  &:hover {
+    background: $white;
+
     span {
-        background-color: white;
-        height: 6px;
-        left: auto;
-        right: 1.4rem;
-        width: 2.9rem;
-        transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.5);
-        &:nth-child(1) {
-            top: calc(50% - 13px);
-        }
-        &:nth-child(2) {
-            top: calc(50% - 2px);
-        }
-        &:nth-child(3) {
-            top: calc(50% + 9px);
-        }
+      background-color: $white;
+      border: solid 1px #000;
     }
-    &.is-active,
-    &:focus,
-    &:hover {
-        background: $white;
-        span {
-            background-color: $white;
-            border: solid 1px #000;
-        }
+  }
+
+  &.is-active {
+    span:nth-child(1) {
+      transform: translateY(11px) rotate(45deg);
     }
-    &.is-active {
-        span:nth-child(1) {
-            transform: translateY(11px) rotate(45deg);
-        }
-        span:nth-child(2) {
-            transform: translateX(200px);
-        }
-        span:nth-child(3) {
-            transform: translateY(-11px) rotate(-45deg);
-        }
+
+    span:nth-child(2) {
+      transform: translateX(200px);
     }
+
+    span:nth-child(3) {
+      transform: translateY(-11px) rotate(-45deg);
+    }
+  }
 }
 
 .navbar.header {
-    background-color: $offBlack;
-    .brand {
-        color: $white;
-        .brand-logo {
-            display: block;
-            max-height: 4rem;
-            max-width: 120%;
-            height: auto;
-            width: auto;
-        }
+  background-color: $offBlack;
+
+  .brand {
+    color: $white;
+
+    .brand-logo {
+      display: block;
+      max-height: 4rem;
+      max-width: 120%;
+      height: auto;
+      width: auto;
     }
-    .navbar-menu {
-        font-family: $family-sans-serif;
-        color: $white;
-        .navbar-item {
-            cursor: pointer;
-            font-weight: 700;
-            line-height: 1.2;
-            transition: all .3s ease-out;
-            color: $white;
-            &.is-active,
-            &:hover {
-                background-color: $white;
-                color: black !important;
-            }
-        }
-        .navbar-buttons {
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
-            justify-content: flex-end;
-            margin-right: 2rem;
-            .navbar-item {
-                margin: 0 0 0 1rem;
-                transition: all .5s ease-out;
-                &.active,
-                &:focus,
-                &:hover {
-                    background: transparent;
-                    transform: scale(1.25);
-                }
-            }
-        }
-        &.is-active {
-            background-color: transparentize($offBlack, 0.25);
-            position: absolute;
-            width: 100vw;
-            height: auto !important;
-            .navbar-item {
-                font-size: 1em;
-                font-weight: 500;
-                color: $white;
-                &.is-active,
-                &:hover {
-                    color: black;
-                }
-            }
-        }
+  }
+
+  .navbar-menu {
+    font-family: $family-sans-serif;
+    color: $white;
+
+    .navbar-item {
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1.2;
+      transition: all .3s ease-out;
+      color: $white;
+
+      &.is-active,
+      &:hover {
+        background-color: $white;
+        color: black !important;
+      }
     }
+
+    .navbar-buttons {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 2rem;
+
+      .navbar-item {
+        margin: 0 0 0 1rem;
+        transition: all .5s ease-out;
+
+        &.active,
+        &:focus,
+        &:hover {
+          background: transparent;
+          transform: scale(1.25);
+        }
+      }
+    }
+
+    &.is-active {
+      background-color: transparentize($offBlack, 0.25);
+      position: absolute;
+      width: 100vw;
+      height: auto !important;
+
+      .navbar-item {
+        font-size: 1em;
+        font-weight: 500;
+        color: $white;
+
+        &.is-active,
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
 }
 
 .home-body {
-    flex-direction: column;
-    justify-content: center;
-    .home-logo {
-        display: block;
-        margin: 0 auto;
-        width: 80vmin;
-        transition: all .5s cubic-bezier(0.445, 0.05, 0.55, 1.25);
-        transition-property: transform;
-        &.off-screen {
-            transform: rotateX(-90deg);
-        }
+  flex-direction: column;
+  justify-content: center;
+
+  .home-logo {
+    display: block;
+    margin: 0 auto;
+    width: 80vmin;
+    transition: all .5s cubic-bezier(0.445, 0.05, 0.55, 1.25);
+    transition-property: transform;
+
+    &.off-screen {
+      transform: rotateX(-90deg);
     }
-    .title {
-        // background-color: transparentize($white, 0.5); color: $white; border-radius: 1rem; font-family: $family-sans-serif; font-size: 10vmin; font-weight: 400; padding: 0.5rem; background-blend-mode: exclusion; margin: 0 auto 2rem auto; transition: transform 0.75s ease-out, color 2s linear; transition-delay: 1s; text-overflow: nowrap; 
-        // text-transform: uppercase; 
-        &.off-screen {
-            @include offScreen(left);
-        }
+  }
+
+  .subtitle {
+    color: $white;
+    font-family: $family-primary;
+    font-size: 3.7vmin;
+    margin-top: 1rem;
+    transition: .75s cubic-bezier(0.175, 0.885, 0.75, 1.2);
+    transition-property: transform;
+    transition-delay: 1.25s;
+
+    &.off-screen {
+      @include offScreen(right);
     }
-    .subtitle {
-        color: $white;
-        font-family: $family-primary;
-        font-size: 3.7vmin;
-        margin-top: 1rem;
-        transition: .75s cubic-bezier(0.175, 0.885, 0.75, 1.2);
-        transition-property: transform;
-        transition-delay: 1.25s;
-        &.off-screen {
-            @include offScreen(right);
-        }
-    }
+  }
 }
 
 .project-tab {
-    // background: chartreuse;
-    &.is-active {
-        text-shadow: 1px 1px 0 rgba(0,0,0,0.7);
-        a {
-            // height: 7.7vmin;
-            // border-bottom: solid 3px chartreuse !important;
-        }
-    }
+  &.is-active {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
+    // a {}
+  }
 }

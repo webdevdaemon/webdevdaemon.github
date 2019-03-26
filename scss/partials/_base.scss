@@ -8,3 +8,11 @@ body {
   min-width:  100vw;
   max-width:  100vw;
 }
+
+button, a {
+  outline: none !important;
+  &:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}

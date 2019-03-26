@@ -27,7 +27,7 @@ export default () => (
           >
             <img alt="Dev Portfolio: Charles Morgan" className="home-logo" src={svg} />
             <h3 className="subtitle has-text-centered">
-              Superstar Teammate, Expert Communicator
+              Superstar Teammate, Expert Communicator,
               <br />& Web Developer Extraordinaire
             </h3>
           </div>
