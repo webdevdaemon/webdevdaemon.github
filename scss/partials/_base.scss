@@ -1,12 +1,29 @@
 html {
   font-size: 10px;
-  @extend %bgGradientLight;
+  // max-height: 100vh;
+  // min-height: 100vh;
+  // min-width:  100vw;
+  // max-width:  100vw;
+  // overflow-x: hidden;
 }
 
 body {
+  @extend %bgGradientLight;
+  max-height: 100vh;
   min-height: 100vh;
   min-width:  100vw;
   max-width:  100vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0; 
+  z-index: 1;
+  main {
+    overflow: hidden hidden;
+
+    .scroll {
+      overflow-y: scroll !important
+    }
+  }
 }
 
 button, a {

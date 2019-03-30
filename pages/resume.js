@@ -2,7 +2,9 @@ import Page from '../components/page'
 import Navbar from '../components/navbar'
 import {HeroBody} from 'bloomer/lib/layout/Hero/HeroBody'
 import {HeroHeader} from 'bloomer/lib/layout/Hero/HeroHeader'
-import {Hero} from 'bloomer/lib/layout/Hero/Hero'
+import { Hero } from 'bloomer/lib/layout/Hero/Hero'
+import { pdfjs } from 'react-pdf'
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 const Resume = () => {
   return (

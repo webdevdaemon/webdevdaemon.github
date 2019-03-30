@@ -1,4 +1,4 @@
-import ExampleCard from '../example-card'
+import DynamicCard from '../dynamic-card'
 
 const Misc = () => {
 

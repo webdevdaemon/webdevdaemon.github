@@ -1,12 +1,12 @@
 import Page from '../components/page'
 import Navbar from '../components/navbar'
-import {Hero} from 'bloomer/lib/layout/Hero/Hero'
-import {HeroBody} from 'bloomer/lib/layout/Hero/HeroBody'
+import TabContent from '../components/tab-content'
+import ProjectTabs from '../components/project-tabs'
+import { Hero } from 'bloomer/lib/layout/Hero/Hero'
+import { HeroBody } from 'bloomer/lib/layout/Hero/HeroBody'
 import { HeroHeader } from 'bloomer/lib/layout/Hero/HeroHeader'
 import { HeroFooter } from 'bloomer/lib/layout/Hero/HeroFooter'
 import { useState } from 'react'
-import TabContent from '../components/tab-content'
-import ProjectTabs from '../components/project-tabs'
 
 const Projects = () => {
 
@@ -20,7 +20,6 @@ const Projects = () => {
       <a onClick={() => tabHandler(i)}>{id}</a>
     </li>
 
-  
   const showContent = ProjectTabs[tabs[activeIndex]]
 
   return (
@@ -55,7 +54,7 @@ const Projects = () => {
         </>
       )}
       style={{
-        overflow: 'scroll',
+        overflowY: 'scroll',
         height: '100vh',
         width: '100vw',
         margin: 0,

@@ -47,16 +47,18 @@ class Page extends React.Component {
     const burgerToggle = this.burgerToggle
 
     return (
-      <CTXBurgerMenu.Provider value={{burgerActive, burgerToggle}}>
-        {render ? (
-          <>{render()}</>
-        ) : (
-          <>
-            <Masthead {...this.props} />
-            {children}
-          </>
-        )}
-        <><OmniInfo /></>
+      <CTXBurgerMenu.Provider value={{ burgerActive, burgerToggle }}>
+        <main className="main">
+          {render ? (
+            <>{render()}</>
+          ) : (
+            <>
+              <Masthead {...this.props} />
+              {children}
+            </>
+          )}
+          <><OmniInfo /></>
+        </main>
       </CTXBurgerMenu.Provider>
     )
   }

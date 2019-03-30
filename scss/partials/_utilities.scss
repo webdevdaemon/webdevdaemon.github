@@ -1,7 +1,15 @@
 %bgGradientLight {
-  background: #d3cce3;
+  background-color: #d3cce3;
   background: -webkit-linear-gradient(to top, #e9e4f0, #d3cce3);
   background: linear-gradient(to top, #e9e4f0, #d3cce3);
+  background-attachment: fixed;
+}
+
+%bgGradientDark {
+  background-color: #001921;
+  background: -webkit-linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-blend-mode: multiply;
   background-attachment: fixed;
 }
 
@@ -20,10 +28,18 @@
 
 // position offscreen
 @mixin offScreen($dir) {
-  @if ($dir==top) { transform: translateY(-101vh); }
-  @if ($dir==bottom) { transform: translateY(101vh); }
-  @if ($dir==left) { transform: translateX(-101vw); }
-  @if ($dir==right) { transform: translateX(101vw); }
+   @if ($dir==top){
+    transform: translateY(-101vh);
+  }
+  @if ($dir==bottom) {
+    transform: translateY(101vh);
+  }
+  @if ($dir==left) {
+    transform: translateX(-101vw);
+  }
+  @if ($dir==right) {
+    transform: translateX(101vw);
+  }
 }
 // auto-generate & assign keyframe animation
 @mixin animation-keyframes {
@@ -32,6 +48,8 @@
   $name: unquote("animation-#{$animation-number}");
   animation-name: $name;
   @at-root {
-    @keyframes #{$name} { @content; }
+     @keyframes #{$name}{
+      @content;
+    }
   }
 }
