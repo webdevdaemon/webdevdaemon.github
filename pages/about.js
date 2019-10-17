@@ -11,6 +11,7 @@ const About = () => {
       titleGradientColor="dark"
       titleSize="small"
       titleText="About CM"
+      
     />
   )
 }

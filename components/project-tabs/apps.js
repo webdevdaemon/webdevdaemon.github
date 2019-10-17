@@ -37,6 +37,6 @@ const Apps = () => {
   )
 }
 
-Apps() //?
+// Apps() //?
 
 export default Apps

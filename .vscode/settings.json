@@ -2,18 +2,19 @@
   "eslint.enable": true,
   "files.exclude": {
     "__**": false,
-    "node_modules": false,
-    ".next": false,
-    ".git": false,
-    ".vscode": false,
-    ".bitmap": false,
+    "node_modules": true,
+    ".next": true,
+    ".git": true,
+    ".vscode": true,
+    ".bitmap": true,
     "**/.DS_Store": false,
-    "bit.json": false,
+    "bit.json": true,
     "static/.DS_Store": false,
     "styles.min.css": false,
     "styles.min.css.map": false,
     "styles.css": false,
-    "styles.css.map": false
+    "styles.css.map": false,
+    ".DS_Store": true
   },
   "workbench.fontAliasing": "auto",
   "workbench.iconTheme": "Monokai Pro Icons",
@@ -26,8 +27,8 @@
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.tabSizing": "shrink",
   "explorer.openEditors.visible": 6,
-  "explorer.sortOrder": "modified",
   "search.location": "panel",
   "search.showLineNumbers": true,
-  "search.useGlobalIgnoreFiles": true
+  "search.useGlobalIgnoreFiles": true,
+  "prettier.semi": false
 }

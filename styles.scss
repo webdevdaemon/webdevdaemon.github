@@ -10,23 +10,19 @@
 @import "node_modules/bulma/bulma.sass";
 // PAGE TRANSITION CLASSES
 // next/PageTransition
+
 .page-transition {
   &-enter {
-    transform: scale(0);
+    // transform: scale(0);
     opacity: .5;
   }
-
   &-enter-active {
-    transform: scale(1);
+    // transform: scale(1);
     opacity: 1;
     z-index: 10;
     transition: transform 333ms linear;
   }
-
-  &-exit {
-    opacity: 1;
-  }
-
+  &-exit { opacity: 1; }
   &-exit-active {
     z-index: 0;
     opacity: 0;
@@ -36,61 +32,28 @@
 
 // Dirty ID usage (bad Charles! BAD!!!)
 #hero-home {
-  background-image: url("./static/markus-spiske.jpg");
-  background-size: cover;
-  background-blend-mode: multiply;
   animation: 12s linear;
+  background-size: cover;
+  background-image: url("./static/markus-spiske.jpg");
+  background-blend-mode: multiply;
   animation-iteration-count: infinite;
   @include animation-keyframes {
-    0% {
-      background-color: hsla(0, 100%, 20%, 1);
-    }
-
-    10% {
-      background-color: hsla(36, 100%, 20%, 1);
-    }
-
-    20% {
-      background-color: hsla(72, 100%, 20%, 1);
-    }
-
-    30% {
-      background-color: hsla(108, 100%, 20%, 1);
-    }
-
-    40% {
-      background-color: hsla(144, 100%, 20%, 1);
-    }
-
-    50% {
-      background-color: hsla(180, 100%, 20%, 1);
-    }
-
-    60% {
-      background-color: hsla(216, 100%, 20%, 1);
-    }
-
-    70% {
-      background-color: hsla(252, 100%, 20%, 1);
-    }
-
-    80% {
-      background-color: hsla(288, 100%, 20%, 1);
-    }
-
-    90% {
-      background-color: hsla(324, 100%, 20%, 1);
-    }
-
-    100% {
-      background-color: hsla(360, 100%, 20%, 1);
-    }
+    0%   { background-color: hsla(0, 100%, 20%, 1);   }
+    10%  { background-color: hsla(36, 100%, 20%, 1);  }
+    20%  { background-color: hsla(72, 100%, 20%, 1);  }
+    30%  { background-color: hsla(108, 100%, 20%, 1); }
+    40%  { background-color: hsla(144, 100%, 20%, 1); }
+    50%  { background-color: hsla(180, 100%, 20%, 1); }
+    60%  { background-color: hsla(216, 100%, 20%, 1); }
+    70%  { background-color: hsla(252, 100%, 20%, 1); }
+    80%  { background-color: hsla(288, 100%, 20%, 1); }
+    90%  { background-color: hsla(324, 100%, 20%, 1); }
+    100% { background-color: hsla(360, 100%, 20%, 1); }
   }
 }
 
-// Corrections
-
-/* ------------------------------- Burger Menu ------------------------------ */
+// * ADJUSTMENTS
+// * BURGER MENU
 .omni-toggle {
   background-color: $white;
   color: yellow;
@@ -115,10 +78,22 @@
     opacity: 1;
   }
 }
+/* .omni-info-overlay {
+//   background-color: rgba(0, 0, 0, 0.5);
+//   height: 100vh;
+//   width: 100vw;
+//   position: absolute;
+//   top: 0;bottom: 0;left: 0;right: 0;
+//   z-index: 500;
+//   &.hidden {
+//     display: none;
+//   }
+// } */
 
 .omni-info-text {
-  background: $grey-dark;
+  background: $primary;
   color: $white;
+  z-index: 1000;
   strong {
     color: $white;
   }
@@ -187,9 +162,9 @@
     .brand-logo {
       display: block;
       max-height: 4rem;
-      max-width: 120%;
-      height: auto;
+      max-width: 100%;
       width: auto;
+      height: auto;
     }
   }
 

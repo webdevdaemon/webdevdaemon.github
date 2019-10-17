@@ -15,3 +15,5 @@ node_modules
 .bit.json
 package-lock.json
 styles.min.css
+.git
+.vscode

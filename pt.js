@@ -1,4 +1,4 @@
-const THEME_COLORS = [
+export const THEME_COLORS = [
   'grey-lighter',
   'grey-light',
   'grey-darker',
@@ -16,13 +16,5 @@ const THEME_COLORS = [
   'white',
 ]
 
-const SIZE_STR = ['small', 'medium', 'large']
-const SIZE_NUM = [1,2,3,4,5,6,7]
-
-/* --------------- EXPORT --------------- */
-
-export {
-  THEME_COLORS,
-  SIZE_STR,
-  SIZE_NUM,
-}
+export const SIZE_STR = ['small', 'medium', 'large']
+export const SIZE_NUM = [1,2,3,4,5,6,7]

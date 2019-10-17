@@ -9,29 +9,21 @@ import { HeroFooter } from 'bloomer/lib/layout/Hero/HeroFooter'
 import { useState } from 'react'
 
 const Projects = () => {
-
   const [activeIndex, setActiveIndex] = useState(0)
   const tabHandler = i => setActiveIndex(i)
 
   const tabs = ['Apps', 'Widgets', 'Github', 'WP', 'Misc']
-  
-  const renderTab = ({ id, i }) =>
-    <li className={`project-tab ${i === activeIndex ? 'is-active' : ''}`} key={id}>
-      <a onClick={() => tabHandler(i)}>{id}</a>
-    </li>
+
+  const renderTab = ({id, i}) => <a onClick={() => tabHandler(i)}>{id}</a>
 
   const showContent = ProjectTabs[tabs[activeIndex]]
 
   return (
-    <Page className="Projects"
+    <Page
+      className="Projects"
       render={() => (
         <>
-          <Hero
-            id="project-hero"
-            isBold
-            isColor="black"
-            isSize="small" 
-            tag="section">
+          <Hero id="project-hero" isBold isColor="black" isSize="small" tag="section">
             <HeroHeader>
               <Navbar className="header" />
             </HeroHeader>
@@ -42,15 +34,20 @@ const Projects = () => {
               <nav className="tabs is-centered is-full-width is-small">
                 <div className="container">
                   <ul>
-                    {tabs.map((id,i) => renderTab({id,i}))}
+                    {tabs.map((id, i) => (
+                      <li
+                        className={`project-tab ${i === activeIndex ? 'is-active' : ''}`}
+                        key={`${id}-${i}`}
+                      >
+                        {renderTab({id, i})}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </nav>
             </HeroFooter>
           </Hero>
-          <TabContent>
-            {showContent()}
-          </TabContent>
+          <TabContent>{showContent()}</TabContent>
         </>
       )}
       style={{
