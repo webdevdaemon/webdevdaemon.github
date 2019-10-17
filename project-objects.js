@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {githubLogo} from './static/Octocat.png'
+import {githubLogo} from './public/Octocat.png'
 
 const github = [{
     name: 'eslint docs',

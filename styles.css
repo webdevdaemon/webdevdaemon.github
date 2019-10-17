@@ -10738,7 +10738,7 @@ label.panel-block:hover {
   -webkit-animation: 12s linear;
           animation: 12s linear;
   background-size: cover;
-  background-image: url("./static/markus-spiske.jpg");
+  background-image: url("./public/markus-spiske.jpg");
   background-blend-mode: multiply;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
@@ -10835,7 +10835,7 @@ label.panel-block:hover {
 
 .omni-toggle.closed {
   background-color: transparent;
-  background-image: url("./static/skull-brackets.png");
+  background-image: url("./public/skull-brackets.png");
   opacity: 0.5;
 }
 

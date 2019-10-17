@@ -18,7 +18,7 @@ const Navbar = props => (
       <Nav {...props}>
         <NavbarBrand>
           <NavbarItem className="brand" href="/" tag="a">
-            <img className="brand-logo" src="./static/brand.png" />
+            <img className="brand-logo" src="./public/brand.png" />
           </NavbarItem>
           <NavbarBurger isActive={burgerActive} onClick={((e) => burgerToggle())} />
         </NavbarBrand>

@@ -7,7 +7,6 @@ import { THEME_COLORS, SIZE_NUM, SIZE_STR } from '../pt'
 import OmniInfo from './omni-info'
 import PropTypes from 'prop-types'
 
-// import { infoImage } from '../static/skull-brackets.png'
 import '../styles.scss'
 
 class Page extends React.Component {

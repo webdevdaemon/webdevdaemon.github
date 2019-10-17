@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 
 const DynamicCard = ({
   contentObject,
-  img = '../static/markus-spiske.jpg',
+  img = '../public/markus-spiske.jpg',
   link = '#',
   name = 'oops...',
   showLabels = false,

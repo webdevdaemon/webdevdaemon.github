@@ -5,7 +5,7 @@ import {Hero} from 'bloomer/lib/layout/Hero/Hero'
 import {HeroHeader} from 'bloomer/lib/layout/Hero/HeroHeader'
 import {HeroBody} from 'bloomer/lib/layout/Hero/HeroBody'
 import {fullPage, noScroll} from '../styles.js'
-import svg from '../static/logo.svg'
+import svg from '../public/logo.svg'
 
 // Actual Page
 export default () => (

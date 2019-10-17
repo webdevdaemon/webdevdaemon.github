@@ -1,8 +1,8 @@
 import React from 'react'
 import {Content} from 'bloomer/lib/elements/Content'
 
-const barbackerLogoWhite = './static/barbacker-logo.png'
-const pomoScreenShot = './static/pomojs.png'
+const barbackerLogoWhite = './public/barbacker-logo.png'
+const pomoScreenShot = './public/pomojs.png'
 const apps = {
   Barbacker: {
     href: 'https://barbacker.herokuapp.com',
