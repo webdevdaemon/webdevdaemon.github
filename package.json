@@ -48,7 +48,7 @@
     "eslint-plugin-env": "^0.0.3",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "prettier-eslint": "^9.0.0",
-    "eslint-plugin-react-hooks": "^0.0.0"
+    "eslint-plugin-react-hooks": "^0.0.0",
+    "prettier-eslint": "^9.0.0"
   }
 }
