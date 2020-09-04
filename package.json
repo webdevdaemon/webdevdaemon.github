@@ -28,7 +28,7 @@
     "next": "^7.0.2",
     "next-images": "^1.0.4",
     "next-page-transitions": "^1.0.0-alpha.5",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-pdf": "^4.0.5",
